@@ -1,0 +1,190 @@
+/* Tailwind v4 base layers */
+@import "tailwindcss/preflight";
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+/* GOOGLE FONTS: Loaded through layout.jsx instead of CSS
+   This avoids Turbopack import errors */
+
+/* -----------------------------------------------------------
+   CUSTOM DESIGN TOKENS (Tailwind v4 supports CSS variables)
+----------------------------------------------------------- */
+:root {
+  --brand-bg: #FAFAF9;
+  --brand-surface: #FFFFFF;
+  --brand-text: #064E3B;
+  --brand-dark: #022C22;
+  --brand-primary: #047857;
+  --brand-primaryLight: #34D399;
+  --brand-primaryDark: #065F46;
+  --brand-saffron: #D94F04;
+  --brand-champagne: #E3DCD2;
+  --brand-champagneDark: #C7BCA5;
+  --brand-silver: #E5E7EB;
+}
+
+/* Utility classes mapped from CSS vars */
+.bg-brand-bg { background-color: var(--brand-bg); }
+.bg-brand-surface { background-color: var(--brand-surface); }
+.bg-brand-primary { background-color: var(--brand-primary); }
+.bg-brand-primaryDark { background-color: var(--brand-primaryDark); }
+.bg-brand-saffron { background-color: var(--brand-saffron); }
+.bg-brand-champagne { background-color: var(--brand-champagne); }
+
+.text-brand-text { color: var(--brand-text); }
+.text-brand-dark { color: var(--brand-dark); }
+.text-brand-primary { color: var(--brand-primary); }
+.text-brand-saffron { color: var(--brand-saffron); }
+.text-brand-champagne { color: var(--brand-champagne); }
+
+.border-brand-champagne { border-color: var(--brand-champagne); }
+.border-brand-saffron { border-color: var(--brand-saffron); }
+.border-brand-primary { border-color: var(--brand-primary); }
+
+/* Hover utilities */
+.hover\:text-brand-saffron:hover { color: var(--brand-saffron); }
+.hover\:bg-brand-saffron:hover { background-color: var(--brand-saffron); }
+.group:hover .group-hover\:text-brand-saffron { color: var(--brand-saffron); }
+.group:hover .group-hover\:bg-brand-saffron { background-color: var(--brand-saffron); }
+.group:hover .group-hover\:border-brand-saffron { border-color: var(--brand-saffron); }
+
+/* -----------------------------------------------------------
+   GLOBAL BODY STYLING
+----------------------------------------------------------- */
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* -----------------------------------------------------------
+   RHOMBUS BACKGROUND
+----------------------------------------------------------- */
+.bg-rhombus {
+  background-image:
+    linear-gradient(135deg, rgba(6, 78, 59, 0.03) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(6, 78, 59, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(6, 78, 59, 0.03) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(6, 78, 59, 0.03) 25%, transparent 25%);
+  background-position: 20px 0, 20px 0, 0 0, 0 0;
+  background-size: 40px 40px;
+}
+
+/* -----------------------------------------------------------
+   GLASS PANEL
+----------------------------------------------------------- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* -----------------------------------------------------------
+   HOLISTIC PILLARS ANIMATIONS — FIXED HERE
+----------------------------------------------------------- */
+
+/* These were previously inline in the component.
+   Now they work globally & immediately. */
+
+@keyframes beamFlow {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@keyframes beamFlowReverse {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+.animate-beam-flow {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(217, 79, 4, 0.6) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: beamFlow 2.5s linear infinite;
+}
+
+.animate-beam-flow-reverse {
+  background: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgba(217, 79, 4, 0.6) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: beamFlowReverse 2.5s linear infinite;
+}
+
+
+/* -----------------------------------------------------------
+   BEAM ANIMATIONS — REQUIRED FOR HolisticPillars
+----------------------------------------------------------- */
+
+@keyframes beamFlow {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@keyframes beamFlowReverse {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+.animate-beam-flow {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(217, 79, 4, 0.6) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: beamFlow 2.5s linear infinite;
+}
+
+.animate-beam-flow-reverse {
+  background: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgba(217, 79, 4, 0.6) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: beamFlowReverse 2.5s linear infinite;
+}
+
+/* -----------------------------------------------------------
+   SLOW SPIN ANIMATIONS (Tailwind v4 no longer supports custom animate-[…])
+----------------------------------------------------------- */
+
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinSlowReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spinSlowReverse 60s linear infinite;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.animate-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
