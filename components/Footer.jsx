@@ -13,7 +13,7 @@ export default function Footer() {
                 <Sun className="w-4 h-4" />
               </div> */}
                         <img
-            src="/logo_3.PNG"
+            src="/logo_4.PNG"
             alt="Digital Vastu Logo"
             className="w-12 h-12 object-contain"
           />
