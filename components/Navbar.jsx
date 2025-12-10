@@ -51,9 +51,11 @@ export default function Navbar({ currentView, onNavigateHome }) {
           onClick={() => handleLinkClick(`#HOME`)}
           className="flex items-center gap-3 group"
         >
-          <div className="w-8 h-8 flex items-center justify-center bg-brand-primary text-white rounded-full group-hover:rotate-12 transition-transform duration-500 shadow-md">
-            <Sun className="w-4 h-4" />
-          </div>
+          <img
+            src="/logo_4.PNG"
+            alt="Digital Vastu Logo"
+            className="w-12 h-12 object-contain"
+          />
 
           <span className="font-serif text-2xl font-semibold text-brand-dark">
             Digital<span className="text-brand-primary">Vastu</span>

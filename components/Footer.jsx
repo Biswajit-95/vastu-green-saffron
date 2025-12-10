@@ -9,9 +9,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 flex items-center justify-center bg-brand-primary text-white rounded-full">
+              {/* <div className="w-8 h-8 flex items-center justify-center bg-brand-primary text-white rounded-full">
                 <Sun className="w-4 h-4" />
-              </div>
+              </div> */}
+                        <img
+            src="/logo_3.PNG"
+            alt="Digital Vastu Logo"
+            className="w-12 h-12 object-contain"
+          />
               <span className="font-serif text-xl font-bold text-brand-dark">
                 Digital<span className="text-brand-primary">Vastu</span>
               </span>
