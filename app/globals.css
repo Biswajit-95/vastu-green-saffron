@@ -51,11 +51,19 @@
 /* -----------------------------------------------------------
    GLOBAL BODY STYLING
 ----------------------------------------------------------- */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
 body {
   background-color: var(--brand-bg);
   color: var(--brand-text);
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* -----------------------------------------------------------
